@@ -1,0 +1,22 @@
+spring:
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/booking_db}
+    username: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD:Naveen@9989}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+server:
+  port: ${SERVER_PORT:8080}
+
+jwt:
+  secret: ${JWT_SECRET:replace-with-a-long-random-secret-at-least-32-characters}
+  issuer: ${JWT_ISSUER:resource-booking-api}
+  expiration-minutes: ${JWT_EXPIRATION_MINUTES:60}

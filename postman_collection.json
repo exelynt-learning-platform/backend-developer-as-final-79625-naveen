@@ -1,0 +1,68 @@
+{
+  "info": {
+    "name": "Resource Booking System",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Login ADMIN",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\\n    \\\"username\\\": \\\"admin\\\",\\n    \\\"password\\\": \\\"Admin@123\\\"\\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/auth/login",
+          "host": [ "{{baseUrl}}" ],
+          "path": [ "auth", "login" ]
+        }
+      }
+    },
+    {
+      "name": "Login USER",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\\n    \\\"username\\\": \\\"user\\\",\\n    \\\"password\\\": \\\"User@123\\\"\\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/auth/login",
+          "host": [ "{{baseUrl}}" ],
+          "path": [ "auth", "login" ]
+        }
+      }
+    },
+    {
+      "name": "Get Resources",
+      "request": {
+        "method": "GET",
+        "header": [
+          { "key": "Authorization", "value": "Bearer {{token}}" }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/resources",
+          "host": [ "{{baseUrl}}" ],
+          "path": [ "resources" ]
+        }
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8080"
+    },
+    {
+      "key": "token",
+      "value": ""
+    }
+  ]
+}
